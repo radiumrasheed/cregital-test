@@ -23,3 +23,5 @@ Route::resources([
 	'companies' => 'CompaniesController',
 	'employees' => 'EmployeesController'
 ]);
+
+// todo Add more routes
