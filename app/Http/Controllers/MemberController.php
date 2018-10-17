@@ -49,7 +49,7 @@ class MemberController extends Controller
 		Session::flash('message', 'This is a message!');
 		Session::flash('alert-class', 'alert-danger');
 
-		return Redirect::to('welcome')->with('message', 'Member registered successfully');
+		return Redirect::to('/')->with('message', 'Member registered successfully');
 	}
 
 
