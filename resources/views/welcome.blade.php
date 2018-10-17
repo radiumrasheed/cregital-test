@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Cregital Test</title>
+	<title>{{ config('app.name', 'Laravel') }}</title>
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -66,20 +66,25 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
+	@if(Session::has('message'))
+		<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+	@endif
+
 	@if (Route::has('login'))
 		<div class="top-right links">
 			@auth
 				<a href="{{ url('/home') }}">Home</a>
 			@else
-				<a href="{{ route('login') }}">Login</a>
+				{{--<a href="{{ route('login') }}">Login</a>--}}
 				{{--<a href="{{ route('register') }}">Register</a>--}}
 			@endauth
+			<a href="{{ route('member.create') }}">Member Registration</a>
 		</div>
 	@endif
 
 	<div class="content">
 		<div class="title m-b-md">
-			Cregital Test
+			{{ config('app.name', 'Laravel') }}
 		</div>
 
 		<div class="links">
