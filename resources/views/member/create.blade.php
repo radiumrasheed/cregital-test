@@ -323,8 +323,10 @@
 								<label for="delivery_services" class="col-md-4 col-form-label text-md-right">{{ __('Delivery services') }}</label>
 
 								<div class="col-md-6">
-									<input id="delivery_services" type="text" class="form-control{{ $errors->has('delivery_services') ? ' is-invalid' : '' }}" name="delivery_services"
-										   value="{{ old('delivery_services') }}" required autofocus>
+									<select id="delivery_services" type="text" class="form-control{{ $errors->has('delivery_services') ? ' is-invalid' : '' }}" name="delivery_services" required autofocus>
+										<option value="merchant_to_pay">Merchant to pay for delivery</option>
+										<option value="customer_to_pay">Customer to pay for delivery</option>
+									</select>
 
 									@if ($errors->has('delivery_service'))
 										<span class="invalid-feedback" role="alert">
