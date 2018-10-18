@@ -12,7 +12,7 @@
 							@csrf
 
 							<div class="form-group row">
-								<label for="districts" class="col-md-4 col-form-label text-md-right">{{ __('Districts') }}</label>
+								<label for="districts" class="col-md-4 col-form-label text-md-right">{{ __('District') }}</label>
 
 								<div class="col-md-6">
 									<input id="districts" type="text" class="form-control{{ $errors->has('districts') ? ' is-invalid' : '' }}" name="districts" value="{{ old('districts') }}" required
@@ -42,7 +42,7 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="first name" class="col-md-4 col-form-label text-md-right">{{ __('first name') }}</label>
+								<label for="first_name" class="col-md-4 col-form-label text-md-right">{{ __('first name') }}</label>
 
 								<div class="col-md-6">
 									<input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}"
@@ -120,7 +120,7 @@
 
 
 							<div class="form-group row">
-								<label for="residential address" class="col-md-4 col-form-label text-md-right">{{ __('residential address') }}</label>
+								<label for="residential_address" class="col-md-4 col-form-label text-md-right">{{ __('Residential address') }}</label>
 
 								<div class="col-md-6">
 									<input id="residential_address" type="text" class="form-control{{ $errors->has('residential_address') ? ' is-invalid' : '' }}" name="residential_address"
@@ -136,7 +136,7 @@
 
 
 							<div class="form-group row">
-								<label for="business_category" class="col-md-4 col-form-label text-md-right">{{ __('business category') }}</label>
+								<label for="business_category" class="col-md-4 col-form-label text-md-right">{{ __('Business category') }}</label>
 
 								<div class="col-md-6">
 									<input id="business_category" type="text" class="form-control{{ $errors->has('business_category') ? ' is-invalid' : '' }}" name="business_category"
@@ -152,7 +152,7 @@
 
 
 							<div class="form-group row">
-								<label for="business_name" class="col-md-4 col-form-label text-md-right">{{ __('business_name') }}</label>
+								<label for="business_name" class="col-md-4 col-form-label text-md-right">{{ __('Business name') }}</label>
 
 								<div class="col-md-6">
 									<input id="business_name" type="text" class="form-control{{ $errors->has('business_name') ? ' is-invalid' : '' }}" name="business_name"
@@ -167,7 +167,7 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="business_location" class="col-md-4 col-form-label text-md-right">{{ __('business location') }}</label>
+								<label for="business_location" class="col-md-4 col-form-label text-md-right">{{ __('Business Location') }}</label>
 
 								<div class="col-md-6">
 									<input id="business_location" type="text" class="form-control{{ $errors->has('business_location') ? ' is-invalid' : '' }}" name="business_location"
@@ -182,7 +182,7 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="discounted permitted" class="col-md-4 col-form-label text-md-right">{{ __('discounted permitted') }}</label>
+								<label for="discount_permitted" class="col-md-4 col-form-label text-md-right">{{ __('Discount permitted') }}</label>
 
 								<div class="col-md-6">
 									<input id="discount_permitted" type="text" class="form-control{{ $errors->has('discount_permitted') ? ' is-invalid' : '' }}" name="discount_permitted"
@@ -197,14 +197,14 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="payment method" class="col-md-4 col-form-label text-md-right">{{ __('payment method') }}</label>
+								<label for="payment_method" class="col-md-4 col-form-label text-md-right">{{ __('Payment Method') }}</label>
 
 								<div class="col-md-6">
 									<select id="payment_method" type="text" class="form-control{{ $errors->has('payment_method') ? ' is-invalid' : '' }}" name="payment_method"
-											value="{{ old('payment_method') }}" required autofocus>
+											required autofocus>
 										<option value="prepaid"> prepaid</option>
 										<option value="payment_on_delivery">payment on delivery</option>
-										<option value="both"> both</option>
+										<option value="both"> both </option>
 									</select>
 
 									@if ($errors->has('payment_method'))
@@ -217,7 +217,7 @@
 
 
 							<div class="form-group row">
-								<label for="subscription mode" class="col-md-4 col-form-label text-md-right">{{ __('subscription mode') }}</label>
+								<label for="subscription_mode" class="col-md-4 col-form-label text-md-right">{{ __('subscription mode') }}</label>
 
 
 								<div class="col-md-6">
@@ -240,11 +240,12 @@
 							<h5> SUBSCRIPTION AMOUNT DESCRIPTION (Please select one of the 3 category below)</h5>
 
 							<div class="form-group row">
-								<label for="monthly_subscription_rates" class="col-md-4 col-form-label text-md-right">{{ __(' 1. monthly subscription rate') }}</label>
+								<label for="monthly_subscription_rates" class="col-md-4 col-form-label text-md-right">{{ __(' Category 1. monthly subscription rate') }}</label>
 
 								<div class="col-md-6">
 									<select id="monthly_subscription_rates" type="text" class="form-control{{ $errors->has('monthly_subscription_rates') ? ' is-invalid' : '' }}"
-											name="monthly_subscription_rates" required autofocus>
+											name="monthly_subscription_rates">
+										<option value="">Select</option>
 										<option value="5product/servicespictures1,000">5 product/services pictures 1,000</option>
 										<option value="10product/servicespictures2,000">10 product/ services pictures 2,000</option>
 										<option value="20product/servicespictures4,000"> 20 product / services pictures 4,000</option>
@@ -261,12 +262,12 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="quarterly_subscription_rates" class="col-md-4 col-form-label text-md-right">{{ __('2. Quarterly subscription rates ') }}</label>
+								<label for="quarterly_subscription_rates" class="col-md-4 col-form-label text-md-right">{{ __('Category 2. Quarterly subscription rates ') }}</label>
 
 								<div class="col-md-6">
 									<select id="quarterly_subscription_rates" type="text" class="form-control{{ $errors->has('quarterly_subscription_rates') ? ' is-invalid' : '' }}"
-											name="quarterly_subscription_rates" required autofocus>
-
+											name="quarterly_subscription_rates">
+										<option value="">Select</option>
 										<option value="10product/servicespictures6,000">10 product/ services pictures 6,000</option>
 										<option value="20product/servicespictures12,000"> 20 product / services pictures 12,000</option>
 										<option value="30product/servicespictures17,100">30 product / services pictures 17,100</option>
@@ -282,12 +283,12 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="annually_subscription_rates" class="col-md-4 col-form-label text-md-right">{{ __(' 3. Annually subscription rates') }}</label>
+								<label for="annually_subscription_rates" class="col-md-4 col-form-label text-md-right">{{ __(' Category 3. Annually subscription rates') }}</label>
 
 								<div class="col-md-6">
 									<select id="annually_subscription_rates" type="text" class="form-control{{ $errors->has('annually_subscription_rates') ? ' is-invalid' : '' }}"
-											name="annually_subscription_rates" required autofocus>
-
+											name="annually_subscription_rates">
+										<option value="">Select</option>
 										<option value="5product/servicespictures12,000">10 product/ services pictures 12,000</option>
 										<option value="10product/servicespictures24,000">10 product/ services pictures 24,000</option>
 										<option value="20product/servicespictures48,000"> 20 product / services pictures 48,000</option>
