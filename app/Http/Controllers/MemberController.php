@@ -16,7 +16,9 @@ class MemberController extends Controller
 	 */
 	public function index()
 	{
+	    // get all members from members model
 		$members = Member::all();
+
 
 		return view('member.list')->with(compact('members'));
 	}
@@ -29,6 +31,7 @@ class MemberController extends Controller
 	 */
 	public function create()
 	{
+	    // show the form
 		return view('member.create');
 	}
 
@@ -44,12 +47,10 @@ class MemberController extends Controller
 	{
 		// todo validation
 
-		$member = Member::create($request->all());
+		Member::create($request->all());
 
-		Session::flash('message', 'This is a message!');
-		Session::flash('alert-class', 'alert-danger');
-
-		return Redirect::to('/')->with('message', 'Member registered successfully');
+		return Redirect::to('/')->with('message', 'Member registered successfully',
+            'alert-class', 'alert-success');
 	}
 
 
