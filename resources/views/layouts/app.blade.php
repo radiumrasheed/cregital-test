@@ -42,6 +42,9 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ route('member.index') }}">{{ __('Members') }}</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ route('cardenrollment.index') }}">{{ __('Card Enrollment') }}</a>
+						</li>
 					@endauth
 				</ul>
 
