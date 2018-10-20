@@ -36,6 +36,18 @@ class MemberController extends Controller
 	}
 
 
+    /**
+     * Show the form for paying.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pay()
+    {
+        // show the form
+        return view('member.pay');
+    }
+
+
 	/**
 	 * Store a newly created resource in storage.
 	 *

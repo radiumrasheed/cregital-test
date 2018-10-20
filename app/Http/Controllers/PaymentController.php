@@ -10,6 +10,17 @@ use Unicodeveloper\Paystack\Paystack;
 
 class PaymentController extends Controller
 {
+    public $paystack;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->paystack = new Paystack();
+    }
 
     /**
      * Redirect the User to Paystack Payment Page
@@ -17,16 +28,17 @@ class PaymentController extends Controller
      */
     public function redirectToGateway()
     {
-        return Paystack::getAuthorizationUrl()->redirectNow();
+        return $this->paystack->getAuthorizationUrl()->redirectNow();
     }
 
     /**
      * Obtain Paystack payment information
      * @return void
+     * @throws \Unicodeveloper\Paystack\Exceptions\PaymentVerificationFailedException
      */
     public function handleGatewayCallback()
     {
-        $paymentDetails = Paystack::getPaymentData();
+        $paymentDetails = $this->paystack->getPaymentData();
 
         dd($paymentDetails);
         // Now you have the payment details,

@@ -29,6 +29,8 @@ Route::get('/member', 'MemberController@index')->middleware('auth')->name('membe
 Route::get('/cardenrollment', 'CardEnrollmentsController@index')->middleware('auth')->name('cardenrollment.index');
 
 Route::get('/member/register', 'MemberController@create')->name('member.create');
+Route::get('/member/pay', 'MemberController@pay')->name('member.pay');
+
 Route::get('/cardenrollment/register', 'CardEnrollmentsController@create')->name('cardenrollment.create');
 
 Route::post('/member', 'MemberController@store')->name('member.store');
