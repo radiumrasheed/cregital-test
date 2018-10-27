@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Card Enrollment  List</div>
+                    <div class="card-header">Card Enrollment List</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -29,7 +29,7 @@
                                 <th> Mobile number</th>
                                 <th> Residential Address</th>
                                 <th> BVN</th>
-
+                                <th> Passport</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,6 +47,7 @@
                                     <td> {{ $cardenrollment->mobile_number }} </td>
                                     <td> {{ $cardenrollment->residential_address }} </td>
                                     <td> {{ $cardenrollment->bvn }} </td>
+                                    <td><img src='{{ asset('public/img/'.$cardenrollment->passport_name) }}'></td>
                                 </tr>
                             @endforeach
                             </tbody>

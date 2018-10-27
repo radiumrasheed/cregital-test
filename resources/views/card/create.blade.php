@@ -8,7 +8,8 @@
                     <div class="card-header" align="center"> {{ __('Card Enrollment Form') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('cardenrollment.store') }}" aria-label="{{ __('Card') }}">
+                        <form method="POST" action="{{ route('cardenrollment.store') }}" enctype="multipart/form-data"
+                              aria-label="{{ __('Card') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -59,10 +60,13 @@
                             <p align="center"> PERSONAL DETAILS</p>
 
                             <div class="form-group row">
-                                <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date Of Birth (DD/MM/YYYY') }}</label>
+                                <label for="dob"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Date Of Birth ') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="dob" type="dob" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" required
+                                    <input id="dob" type="date" placeholder="(DD/MM/YYYY)"
+                                           class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob"
+                                           value="{{ old('dob') }}" required
                                            autofocus>
                                     @if ($errors->has('dob'))
                                         <span class="invalid-feedback" role="alert">
@@ -72,6 +76,21 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="passport_name"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Passport upload') }}</label>
+
+                                <div class="col-md-6">
+                                    <input type="file"
+                                           class="form-control{{ $errors->has('passport_upload') ? ' is-invalid' : '' }}"
+                                           name="passport_name" value="{{ old('passport_name') }}" required autofocus>
+                                    @if ($errors->has('passport_name'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('passport_name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
 
                             <div class="form-group row">
                                 <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>

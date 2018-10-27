@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header" align="center"> {{ __('Member (Merchant)  Pay Form') }}</div>
+                    <div class="card-header" align="center"> {{ __('Merchant Payment Form') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal"
@@ -14,13 +14,14 @@
                                 <div class="col-md-8 col-md-offset-2">
                                     <p>
                                     <div>
-                                        Lagos Eyo Print Tee Shirt
-                                        ₦ 2,950
+                                        Subscription Fee
+                                        ₦ 1,500
                                     </div>
                                     </p>
-                                    <input type="hidden" name="email" value="otemuyiwa@gmail.com"> {{-- required --}}
+                                    <input type="hidden" name="email"
+                                           value="anchorsupport@gmail.com"> {{-- required --}}
                                     <input type="hidden" name="orderID" value="345">
-                                    <input type="hidden" name="amount" value="800"> {{-- required in kobo --}}
+                                    <input type="hidden" name="amount" value="1,500"> {{-- required in kobo --}}
                                     <input type="hidden" name="quantity" value="3">
                                     <input type="hidden" name="metadata"
                                            value="{{ json_encode($array = ['key_name' => 'value',]) }}"> {{-- For other necessary things you want to add to your payload. it is optional though --}}

@@ -41,6 +41,12 @@
 			top: 18px;
 		}
 
+		.top-left {
+			position: absolute;
+			left: 10px;
+			top: 18px;
+		}
+
 		.content {
 			text-align: center;
 		}
@@ -65,19 +71,29 @@
 	</style>
 </head>
 <body>
+
 <div class="flex-center position-ref full-height">
 	@if(Session::has('message'))
 		<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 	@endif
 
 	@if (Route::has('login'))
+
+		<div class="top-left links">
+			<a class="navbar-brand" href="{{ url('/') }}">
+				<img src="/img/anchor.png" class="css-class" alt="alt text">
+
+				{{--{{ config('app.name', 'Laravel') }}--}}
+			</a>
+		</div>
+
 		<div class="top-right links">
 			@auth
 				<a href="{{ route('home') }}">Dashboard</a>
 			@else
 				{{--<a href="{{ route('login') }}">Login</a>--}}
 				<a href="{{ route('cardenrollment.create') }}">Card Enrollment</a>
-				<a href="{{ route('member.create') }}">Member Registration</a>
+				<a href="{{ route('member.create') }}">Merchant Registration</a>
 			@endauth
 		</div>
 	@endif

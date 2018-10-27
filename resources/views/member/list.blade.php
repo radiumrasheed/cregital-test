@@ -21,7 +21,6 @@
 								<th> Districts</th>
 								<th> Surname</th>
 								<th> First name</th>
-								<th> Password</th>
 								<th> Gender</th>
 								<th> Phone Number</th>
 								<th> Email</th>
@@ -50,7 +49,6 @@
 									<td> {{ $member->districts }} </td>
 									<td> {{ $member->surname }} </td>
 									<td> {{ $member->first_name }} </td>
-									<td> {{ $member->password }} </td>
 									<td> {{ $member->gender }} </td>
 									<td> {{ $member->phone_number }} </td>
 									<td> {{ $member->email }} </td>
