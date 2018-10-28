@@ -38,7 +38,7 @@ class CardEnrollmentsController extends Controller
 
         CardEnrollment::create($request->all());
 
-        return Redirect::to('/')->with('message', 'Card enrolled successfully',
+        return Redirect::to('/member/pay')->with('message', 'Card enrolled successfully',
             'alert-class', 'alert-success');
     }
 

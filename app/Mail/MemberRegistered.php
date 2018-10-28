@@ -34,4 +34,5 @@ class MemberRegistered extends Mailable
     {
         return $this->view('member.registered');
     }
+
 }

@@ -36,9 +36,9 @@ Route::get('/cardenrollment/register', 'CardEnrollmentsController@create')->name
 Route::post('/member', 'MemberController@store')->name('member.store');
 Route::post('/cardenrollment', 'CardEnrollmentsController@store')->name('cardenrollment.store');
 
-
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
+
 
 
 // todo Add more routes

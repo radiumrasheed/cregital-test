@@ -14,7 +14,6 @@ class CreateCardEnrollmentsTable extends Migration
     public function up()
     {
         Schema::create('card_enrollments', function (Blueprint $table) {
-
             $table->increments('id');
             $table->timestamps();
             $table->string('email_address');
@@ -28,6 +27,8 @@ class CreateCardEnrollmentsTable extends Migration
             $table->string('mobile_number');
             $table->string('residential_address');
             $table->string('bvn');
+            $table->string('passport_name');
+
         });
     }
 

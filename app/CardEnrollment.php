@@ -18,5 +18,6 @@ class CardEnrollment extends Model
         'mobile_number',
         'residential_address',
         'bvn',
+        'passport_name',
     ];
 }
