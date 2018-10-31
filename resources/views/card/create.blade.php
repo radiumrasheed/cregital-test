@@ -82,7 +82,7 @@
 
                                 <div class="col-md-6">
                                     <input type="file"
-                                           class="form-control{{ $errors->has('passport_upload') ? ' is-invalid' : '' }}"
+                                           class="form-control{{ $errors->has('passport_name') ? ' is-invalid' : '' }}"
                                            name="passport_name" value="{{ old('passport_name') }}" required autofocus>
                                     @if ($errors->has('passport_name'))
                                         <span class="invalid-feedback" role="alert">

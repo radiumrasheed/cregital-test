@@ -15,20 +15,19 @@ class CreateCardEnrollmentsTable extends Migration
     {
         Schema::create('card_enrollments', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->string('email_address');
-            $table->string('church_group');
-            $table->string('district');
-            $table->date('dob');
-            $table->string('gender');
-            $table->string('surname');
-            $table->string('firstname');
-            $table->string('middlename');
-            $table->string('mobile_number');
-            $table->string('residential_address');
-            $table->string('bvn');
-            $table->string('passport_name');
-
+	        $table->string('email_address');
+	        $table->string('church_group');
+	        $table->string('district');
+	        $table->date('dob');
+	        $table->string('gender');
+	        $table->string('surname');
+	        $table->string('firstname');
+	        $table->string('middlename');
+	        $table->string('mobile_number');
+	        $table->string('residential_address');
+	        $table->string('bvn');
+	        $table->string('passport_name')->nullable();
+	        $table->timestamps();
         });
     }
 
