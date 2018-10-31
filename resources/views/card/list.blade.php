@@ -47,7 +47,8 @@
                                     <td> {{ $cardenrollment->mobile_number }} </td>
                                     <td> {{ $cardenrollment->residential_address }} </td>
                                     <td> {{ $cardenrollment->bvn }} </td>
-                                    <td><img src='{{ asset('public/img/'.$cardenrollment->passport_name) }}'></td>
+                                    <td><img src='{{ asset('storage/app/passports/'.$cardenrollment->passport_name) }}'>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

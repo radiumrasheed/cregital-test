@@ -145,9 +145,8 @@
                             <div class="form-group row">
                                 <label for="bank_name"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Bank Name ') }}</label>
-
                                 <div class="col-md-6">
-                                    <select name="bank_name" id="subscription_mode" onchange="changeCat(this);"
+                                    <select name="bank_name" id="bank_name" onchange="changeCat(this);"
                                             class="form-control{{ $errors->has('bank_name') ? ' is-invalid' : '' }}">
                                         <option value="">Select</option>
                                         <option value="access">Access Bank</option>
@@ -246,21 +245,22 @@
                                     <select name="business_category" id="business_category" onchange="changeCat(this);"
                                             class="form-control{{ $errors->has('business_category') ? ' is-invalid' : '' }}">
                                         <option value="">Select</option>
-                                        <option value="">Automotive & Industrial</option>
-                                        <option value="">Baby, Kids and Toys</option>
-                                        <option value=""> Beauty, Health & Personal Care</option>
-                                        <option value=""> Books & Media Library</option>
-                                        <option value=""> Computers and Accessories</option>
-                                        <option value=""> Drinks & Groceries</option>
-                                        <option value=""> Electronics</option>
-                                        <option value=""> Fashion</option>
-                                        <option value=""> Home and Kitchen</option>
-                                        <option value=""> Lifestyle & Services</option>
-                                        <option value=""> Office & School Supplies</option>
-                                        <option value=""> Home and Kitchen</option>
-                                        <option value=""> Phones and Tablets</option>
-                                        <option value="">Sports and Fitness</option>
-                                        <option value=""> Other categories</option>
+                                        <option value="automative_industrial">Automotive & Industrial</option>
+                                        <option value="baby_kids_toys">Baby, Kids and Toys</option>
+                                        <option value="beauty_health_personalcare"> Beauty, Health & Personal Care
+                                        </option>
+                                        <option value="books_media_library"> Books & Media Library</option>
+                                        <option value="computers_accessories"> Computers and Accessories</option>
+                                        <option value="drinks_groceries"> Drinks & Groceries</option>
+                                        <option value="electronics"> Electronics</option>
+                                        <option value="fashion"> Fashion</option>
+                                        <option value="home_kitchen"> Home and Kitchen</option>
+                                        <option value="lifestyle_services"> Lifestyle & Services</option>
+                                        <option value="office_school_supplies"> Office & School Supplies</option>
+                                        <option value="home_kitchen"> Home and Kitchen</option>
+                                        <option value="phones_tablets"> Phones and Tablets</option>
+                                        <option value="sports_fitness">Sports and Fitness</option>
+                                        <option value="other_categories"> Other categories</option>
                                     </select>
 
                                     {{--<div class="col-md-6">--}}
