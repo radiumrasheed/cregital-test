@@ -509,12 +509,12 @@
 
                             <div class="form-group row">
                                 <label for="rc_number"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Rc number (Company Registration Number, if available)') }}</label>
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Rc number (Company Registration Number)') }}</label>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6"> Optional
                                     <input id="rc_number" type="text" maxlength="6"
                                            class="form-control{{ $errors->has('rc_number') ? ' is-invalid' : '' }}"
-                                           name="rc_number" value="{{ old('rc_number') }}" required autofocus>
+                                           name="rc_number" value="{{ old('rc_number') }}">
 
                                     @if ($errors->has('rc_number'))
                                         <span class="invalid-feedback" role="alert">
@@ -545,23 +545,23 @@
                             {{--</div>--}}
                             {{--</div>--}}
 
-                            <div class="form-group row">
-                                <label for="name_of_care_group_leader"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Name of care group leader') }}</label>
+                            {{--<div class="form-group row">--}}
+                            {{--<label for="name_of_care_group_leader"--}}
+                            {{--class="col-md-4 col-form-label text-md-right">{{ __('Name of care group leader') }}</label>--}}
 
-                                <div class="col-md-6">
-                                    <input id="name_of_care_group_leader" type="text"
-                                           class="form-control{{ $errors->has('name_of_care_group_leader') ? ' is-invalid' : '' }}"
-                                           name="name_of_care_group_leader"
-                                           value="{{ old('name_of_care_group_leader') }}" required autofocus>
+                            {{--<div class="col-md-6">--}}
+                            {{--<input id="name_of_care_group_leader" type="text"--}}
+                            {{--class="form-control{{ $errors->has('name_of_care_group_leader') ? ' is-invalid' : '' }}"--}}
+                            {{--name="name_of_care_group_leader"--}}
+                            {{--value="{{ old('name_of_care_group_leader') }}" required autofocus>--}}
 
-                                    @if ($errors->has('name_of_care_group_leader'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name_of_care_group_leader') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
+                            {{--@if ($errors->has('name_of_care_group_leader'))--}}
+                            {{--<span class="invalid-feedback" role="alert">--}}
+                            {{--<strong>{{ $errors->first('name_of_care_group_leader') }}</strong>--}}
+                            {{--</span>--}}
+                            {{--@endif--}}
+                            {{--</div>--}}
+                            {{--</div>--}}
 
                             <div class="form-group row">
                                 <label for="care_group"

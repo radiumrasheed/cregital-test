@@ -36,7 +36,7 @@
 								<th> Annually Subscription Rates</th>
 								<th> RC Number</th>
 								<th> Delivery Services</th>
-								<th> Name of Care Group Leader</th>
+								{{--<th> Name of Care Group Leader</th>--}}
 								<th> Care Group </th>
 								<th> Telephone</th>
 
@@ -64,7 +64,7 @@
 									<td> {{ $member->annually_subscription_rates }} </td>
 									<td> {{ $member->rc_number }} </td>
 									<td> {{ $member->delivery_services }} </td>
-									<td> {{ $member->name_of_care_group_leader }} </td>
+									{{--<td> {{ $member->name_of_care_group_leader }} </td>--}}
 									<td> {{ $member->care_group }} </td>
 									<td> {{ $member->telephone }} </td>
 								</tr>

@@ -81,13 +81,13 @@
 
 		<div class="top-left links">
 			<a class="navbar-brand" href="{{ url('/') }}">
-				<img src="/img/anchor.png" class="css-class" alt="alt text">
+                <img src="/img/anchor.png" class="css-class" alt="anchor logo>
 
 				{{--{{ config('app.name', 'Laravel') }}--}}
 			</a>
 		</div>
 
-		<div class="top-right links">
+		<div class=" top-right links">
 			@auth
 				<a href="{{ route('home') }}">Dashboard</a>
 			@else

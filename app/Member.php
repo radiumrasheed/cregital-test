@@ -23,7 +23,6 @@ class Member extends Model
 		'discount_permitted',
 		'payment_method',
         'rc_number',
-		'name_of_care_group_leader',
 		'care_group',
 		'telephone',
 	];
