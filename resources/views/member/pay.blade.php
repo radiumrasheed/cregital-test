@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header" align="center"> {{ __('Merchant Payment Form') }}</div>
+                    <div class="card-header" align="center"> {{ __('Card Payment Form') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal"
