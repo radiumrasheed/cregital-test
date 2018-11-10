@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
 	return $request->user();
 });
+
+Route::get('/passports/{file_name}', function ($file_name) {
+
+	return response()->file(storage_path('app/passports/' . $file_name));
+
+});
