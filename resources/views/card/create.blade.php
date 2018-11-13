@@ -64,7 +64,9 @@
                                        class="col-md-4 col-form-label text-md-right">{{ __('Date Of Birth ') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="dob" type="date" placeholder="(DD/MM/YYYY)"
+
+                                    {{--<input id="dob" type="date" placeholder="(DD/MM/YYYY)"--}}
+                                    <input id="dob" type="text" placeholder="(DD/MM/YYYY) Eg 22/04/1987"
                                            class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob"
                                            value="{{ old('dob') }}" required
                                            autofocus>

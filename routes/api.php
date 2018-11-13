@@ -19,6 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/passports/{file_name}', function ($file_name) {
 
-	return response()->file(storage_path('app/passports/' . $file_name));
+    return response()->file(public_path('uploads/passports/' . $file_name));
 
+});
+
+Route::get('command/{command}', function ($command) {
+
+    /* php artisan any_command */
+    $response = \Artisan::call($command);
+
+    return response()->json($response);
 });
