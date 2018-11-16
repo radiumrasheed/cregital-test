@@ -25,6 +25,8 @@
 	<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 		<div class="container">
 			<a class="navbar-brand" href="{{ url('/') }}">
+				<img src="/img/anchor.png" class="css-class" alt="alt text">
+
 				{{ config('app.name', 'Laravel') }}
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -41,6 +43,9 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="{{ route('member.index') }}">{{ __('Members') }}</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ route('cardenrollment.index') }}">{{ __('Card Enrollment') }}</a>
 						</li>
 					@endauth
 				</ul>

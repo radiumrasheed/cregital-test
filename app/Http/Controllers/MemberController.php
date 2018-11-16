@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MemberRegistered;
 use App\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 
 class MemberController extends Controller
 {
@@ -16,6 +17,7 @@ class MemberController extends Controller
 	 */
 	public function index()
 	{
+		// get all members from members model
 		$members = Member::all();
 
 		return view('member.list')->with(compact('members'));
@@ -29,8 +31,21 @@ class MemberController extends Controller
 	 */
 	public function create()
 	{
+		// show the form
 		return view('member.create');
 	}
+
+
+    /**
+     * Show the form for paying.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pay()
+    {
+        // show the form
+        return view('member.pay');
+    }
 
 
 	/**
@@ -42,14 +57,20 @@ class MemberController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		// todo validation
+		// todo add validation
 
+		// store new member in database
 		$member = Member::create($request->all());
 
-		Session::flash('message', 'This is a message!');
-		Session::flash('alert-class', 'alert-danger');
+		// get email of member
+		$member_email = $member->email;
 
-		return Redirect::to('/')->with('message', 'Member registered successfully');
+		// send mail to the user
+		Mail::to($member_email)->send(new MemberRegistered($member));
+
+		// return success message
+		return Redirect::to('/')
+			->with('message', 'Member registered successfully', 'alert-class', 'alert-success');
 	}
 
 
@@ -103,5 +124,18 @@ class MemberController extends Controller
 	public function destroy(Member $member)
 	{
 		//
+	}
+
+
+	/**
+	 * Preview the email sent to the user if registered
+	 *
+	 * @param Member $member
+	 *
+	 * @return MemberRegistered
+	 */
+	public function preview(Member $member)
+	{
+		return new MemberRegistered($member);
 	}
 }

@@ -41,6 +41,12 @@
 			top: 18px;
 		}
 
+		.top-left {
+			position: absolute;
+			left: 10px;
+			top: 18px;
+		}
+
 		.content {
 			text-align: center;
 		}
@@ -65,19 +71,29 @@
 	</style>
 </head>
 <body>
+
 <div class="flex-center position-ref full-height">
 	@if(Session::has('message'))
 		<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 	@endif
 
 	@if (Route::has('login'))
+
+		<div class="top-left links">
+			<a class="navbar-brand" href="{{ url('/') }}">
+				<img src="/img/anchor.png" class="css-class" alt="logo">
+
+				{{--{{ config('app.name', 'Laravel') }}--}}
+			</a>
+		</div>
+
 		<div class="top-right links">
 			@auth
 				<a href="{{ route('home') }}">Dashboard</a>
 			@else
 				{{--<a href="{{ route('login') }}">Login</a>--}}
-				{{--<a href="{{ route('register') }}">Register</a>--}}
-				<a href="{{ route('member.create') }}">Member Registration</a>
+				<a href="{{ route('cardenrollment.create') }}">Card Enrollment</a>
+				<a href="{{ route('member.create') }}">Merchant Registration</a>
 			@endauth
 		</div>
 	@endif
@@ -87,13 +103,13 @@
 			{{ config('app.name', 'Laravel') }}
 		</div>
 
-		<div class="links">
-			<a href="https://laravel.com/docs">Documentation</a>
-			<a href="https://laracasts.com">Laracasts</a>
-			<a href="https://laravel-news.com">News</a>
-			<a href="https://forge.laravel.com">Forge</a>
-			<a href="https://github.com/laravel/laravel">GitHub</a>
-		</div>
+		{{--<div class="links">--}}
+			{{--<a href="https://laravel.com/docs">Documentation</a>--}}
+			{{--<a href="https://laracasts.com">Laracasts</a>--}}
+			{{--<a href="https://laravel-news.com">News</a>--}}
+			{{--<a href="https://forge.laravel.com">Forge</a>--}}
+			{{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
+		{{--</div>--}}
 	</div>
 </div>
 </body>

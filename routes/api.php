@@ -16,3 +16,17 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
 	return $request->user();
 });
+
+Route::get('/passports/{file_name}', function ($file_name) {
+
+    return response()->file(public_path('uploads/passports/' . $file_name));
+
+});
+
+Route::get('command/{command}', function ($command) {
+
+    /* php artisan any_command */
+    $response = \Artisan::call($command);
+
+    return response()->json($response);
+});
